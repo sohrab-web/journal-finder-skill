@@ -35,6 +35,9 @@ Use this table:
 | Journal | Publisher | Why it fits | Article type | Open access / APC | Link |
 |---|---|---|---|---|---|
 
+Always include a working link to each journal's author-guidelines or home page. A table without links is incomplete.
+
+If the user's constraints (for example no APC) leave fewer than 8 journals, still give 8 to 10: first the journals that meet every constraint, then a second group labelled "Close alternatives" that break one constraint, saying which one. Keep the three tiers within each group.
 Then add 2-3 lines: your top pick and why, plus any red flag (scope mismatch, paper too short, missing benchmark).
 
 ## Rules
