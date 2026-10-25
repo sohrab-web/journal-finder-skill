@@ -1,64 +1,78 @@
-Journal Finder (Claude skill)
+name: journal-finder
+description: Suggests journals where a research paper can be submitted. Use whenever the user shares a paper title, abstract, draft or topic and asks where to publish, which journal fits, where to submit, or wants a list of target journals, even if they don't say "journal finder". Also use for "alternative journals after rejection".
 
-A tiny Claude skill. Paste your paper's title and abstract, and it gives you a ranked list of journals you can submit to, with links, open-access info and why each one fits.
+Journal Finder
 
-
-What you get
-
-
-8-10 journals in three tiers: ambitious, good fit, safer
-
-A table: journal, publisher, fit, article type, open access/APC, link
-
-A top pick and any red flags
-
-Journals are looked up on the web each time, so the list stays current
+Give the user a short, honest list of journals their paper could be submitted to.
 
 
-Install (Claude app)
+Step 1: Understand the paper
 
-
-Settings > Capabilities > turn on Code execution and file creation.
-
-Customize > Skills > + > Upload a skill > choose journal-finder.zip.
-
-Make sure the toggle is on.
-
-
-Use
-
-Start a new chat and say:
+From the title, abstract or draft, note:
 
 
 
-Where can I submit this paper? [paste title + abstract]
+Field and subfield (e.g. deep learning for single-cell biology)
+
+Paper type: original research, review/survey, short letter, dataset/benchmark
+
+Contribution: new method, application, benchmark, theory
+
+
+If the user gave only a vague topic, ask ONE question: "Can you paste the title and abstract?"
+Ask about constraints only if missing: open access needed? APC budget? speed? Rejected from a journal already?
+
+
+Step 2: Search for real, current journals
+
+Use web search. Do not rely on memory for scope, indexing, fees or speed.
 
 
 
-Other examples:
+Search for journals that recently published similar papers (search the paper's key terms).
+
+For each candidate, open the journal's own "Aims & Scope" or "Author guidelines" page.
+
+Check: scope match, article types accepted, open access/APC, indexing (SCI/SCIE/Scopus), peer-review speed if stated.
+
+
+Never invent impact factors, quartiles, APCs or acceptance rates. If you cannot verify a number, write "check on journal site".
+
+
+Step 3: Output a ranked list
+
+Give 8 to 10 journals in three tiers:
 
 
 
-"Suggest open-access journals for this abstract, APC under $2000."
+Ambitious (2-3): higher prestige, lower chance
 
-"My paper was rejected from X. Where next?"
+Good fit (3-4): best match for scope and quality
 
-
-Install (Claude Code)
-
-git clone https://github.com/<your-username>/journal-finder-skill.git
-mkdir -p ~/.claude/skills
-cp -r journal-finder-skill/skills/journal-finder ~/.claude/skills/
-
-Notes
+Safer (2-3): broader scope or faster, higher chance
 
 
-Always confirm scope and fees on the journal's own website.
-
-Nothing is guaranteed: this is a suggestion list, not an acceptance predictor.
+Use this table:
 
 
-License
+Journal	Publisher	Why it fits	Article type	Open access / APC	Link
 
-MIT
+Then add 2-3 lines: your top pick and why, plus any red flag (scope mismatch, paper too short, missing benchmark).
+
+
+Rules
+
+
+Only suggest journals that exist and match the paper. Skip predatory or unknown publishers; if unsure, say so.
+
+If the user is a student, mention that supervisor approval and institutional requirements (e.g. required indexing for graduation) may limit the choice.
+
+Remind once: confirm current rules on the journal's own site before submitting. Do not claim to guarantee acceptance.
+
+Keep the answer short. No long essays.
+
+
+After rejection
+
+If the user says they were rejected: ask for the reviewer comments, list the journals one tier lower or with a closer scope, and note which reviewer points to fix first.
 
