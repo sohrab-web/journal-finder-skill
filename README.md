@@ -23,7 +23,7 @@ Other examples:
 
 ## Install (Claude Code)
 ```
-git clone https://github.com/sohrab-web/journal-finder-skill.git
+git clone https://github.com/sohrab-web/journal-finder-skill.git ~/.claude/skills/journal-finder
 mkdir -p ~/.claude/skills
 cp -r journal-finder-skill/skills/journal-finder ~/.claude/skills/
 ```
